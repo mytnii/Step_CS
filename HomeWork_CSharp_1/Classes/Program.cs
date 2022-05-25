@@ -34,7 +34,41 @@ namespace Classes
     {
         static void Main(string[] args)
         {
+            Article article = new Article
+                (
+                012345,
+                "Яблоко",
+                1000,
+                Article.ArticleType.Foods
+                );
 
+            article.PrintArticle();
+
+            Client client = new Client
+                (
+                123456,
+                "Аверкиев",
+                "Роман",
+                "Евгеньевич",
+                "Неизвестно",
+                "+79991233456",
+                3,
+                2000
+                );
+
+            client.PrintClient();
+
+            RequestItem requestItem = new RequestItem(article._productName, 3);
+
+            requestItem.PrintRequestItem();
+
+            Request request = new Request
+                (
+                345678, article._productPrice, requestItem._productQuantity,
+                article._productName, Request.PayType.Cash
+                );
+
+            request.PrintRequest();
         }
     }
 }
